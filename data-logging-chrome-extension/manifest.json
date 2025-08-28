@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Code Metrics Logger",
+  "version": "0.1.0",
+  "description": "Opt-in logger for coding activity metrics (compile attempts, errors, keystrokes, idle, undo/redo).",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Code Metrics Logger"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "options_page": "options.html"
+}

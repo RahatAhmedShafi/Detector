@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Metrics Logger — Options</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; max-width: 720px; }
+      input { padding: 6px 8px; border-radius: 8px; border: 1px solid #ccc; }
+      button { padding: 8px 12px; border-radius: 10px; border: 1px solid #ccc; cursor: pointer; }
+      .row { display: flex; gap: 12px; align-items: center; margin: 12px 0; }
+      code { background: #f6f6f6; padding: 2px 6px; border-radius: 4px; }
+      p.note { color: #555; }
+    </style>
+  </head>
+  <body>
+    <h1>Code Metrics Logger — Options</h1>
+    <p class="note">All data stays on your device. Use <b>Export</b> to save or share it. You can delete all data below.</p>
+    <div class="row">
+      <label>Idle threshold (ms): <input id="idleMs" type="number" min="1000" step="500"></label>
+      <button id="save">Save</button>
+    </div>
+    <div class="row">
+      <button id="export">Export JSON</button>
+      <button id="clear">Delete All Data</button>
+    </div>
+    <h3>How it works</h3>
+    <ul>
+      <li>Click <b>Start logging</b> in the popup for a tab to activate the content script.</li>
+      <li>Keystrokes are counted; special combos like <code>Ctrl/Cmd+Z</code> (undo), <code>Ctrl/Cmd+Y</code> or <code>Shift+Ctrl/Cmd+Z</code> (redo), and <code>Ctrl/Cmd+Enter</code> (compile attempt) are tagged.</li>
+      <li>Clicks on buttons labeled "Run/Compile/Execute/Build" are counted as compile attempts.</li>
+      <li>Periods with no activity beyond the idle threshold are logged as "idle".</li>
+      <li>Page JavaScript errors are captured via an injected <code>window.onerror</code> hook.</li>
+    </ul>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Metrics Logger</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 16px; width: 320px; }
+      button { padding: 8px 12px; border-radius: 10px; border: 1px solid #ccc; cursor: pointer; }
+      .row { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; }
+      .stat { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin: 6px 0; }
+      .stat b { text-align: right; }
+      small { color: #555; }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <button id="start">Start logging</button>
+      <button id="stop">Stop logging</button>
+    </div>
+    <div id="status"><small>Not active</small></div>
+    <hr>
+    <div id="summary"></div>
+    <hr>
+    <div class="row">
+      <!-- <button id="export">Export JSON</button> -->
+      <button id="options">Options</button>
+      <!-- ...existing code... -->
+<button id="export">Export JSON</button>
+  <button id="export-csv">Export CSV</button>
+
+<!-- ...existing code... -->
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
